@@ -22,4 +22,5 @@ Rails.application.routes.draw do
 
   #TRIPS
   get "/trips" => "trips#index"
+  post "/trips" => "trips#create"
 end
