@@ -10,5 +10,10 @@ class TripsController < ApplicationController
           coffee_shops_id: params[:coffee_shops_id],
         )
         render :show
-      end
+    end
+
+    def show
+        @trip = Trip.find_by(id: params[:id])
+        render :show
+    end
 end
