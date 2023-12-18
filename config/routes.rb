@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   #COFFEE SHOPS
   get "/coffee_shops" => "coffee_shops#index"
-
+  post "/coffee_shops" => "coffee_shops#create"
 end
