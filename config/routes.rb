@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   delete "/users/:id" => "users#destroy"
 
   #COFFEE SHOPS
-  # get "/coffeeshops" => "coffeeshops#index"
+  get "/coffee_shops" => "coffee_shops#index"
 
 end

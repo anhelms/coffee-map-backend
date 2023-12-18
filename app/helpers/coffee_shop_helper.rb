@@ -1,0 +1,2 @@
+module CoffeeShopHelper
+end
