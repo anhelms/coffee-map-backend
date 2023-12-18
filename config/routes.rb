@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get "/coffee_shops/:id" => "coffee_shops#show"
   patch "/coffee_shops/:id" => "coffee_shops#update"
   delete "/coffee_shops/:id" => "coffee_shops#destroy"
+
+  #REVIEWS
+  get "/reviews" => "reviews#index"
 end
