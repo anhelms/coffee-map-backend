@@ -1,2 +1,0 @@
-class Coffeeshops < ApplicationRecord
-end

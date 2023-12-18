@@ -1,10 +1,6 @@
 class CreateCoffeeShops < ActiveRecord::Migration[7.0]
   def change
-    create_table :coffeeshops do |t|
-      # has_many reviews
-      # has_many trips
-      # has_many images
-
+    create_table :coffee_shops do |t|
       t.string :name
       t.string :latitude
       t.string :longitude

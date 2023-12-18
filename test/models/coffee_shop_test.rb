@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CoffeeShopsTest < ActiveSupport::TestCase
+class CoffeeShopTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

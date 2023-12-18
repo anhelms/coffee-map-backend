@@ -5,9 +5,12 @@ one:
   email: MyString
   password_digest: MyString
   image_url: MyString
-
+  # created_at: Time.now
+  # updated_at: Time.now
 two:
   name: MyString
   email: MyString
   password_digest: MyString
   image_url: MyString
+  # created_at: Time.now
+  # updated_at: Time.now
