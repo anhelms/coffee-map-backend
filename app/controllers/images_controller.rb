@@ -16,4 +16,13 @@ class ImagesController < ApplicationController
         @image = Image.find_by(id: params[:id])
         render :show
     end
+
+    def update
+        @image = Image.find_by(id: params[:id])
+        @image.update(
+          image_url: params[:image_url] || @image_url.name,
+          coffee_shops_id: params[:coffee_shops_id] || @image.coffee_shops_id,
+        )
+        render :show
+    end
 end
