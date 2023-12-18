@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "/coffee_shops" => "coffee_shops#index"
   post "/coffee_shops" => "coffee_shops#create"
   get "/coffee_shops/:id" => "coffee_shops#show"
+  patch "/coffee_shops/:id" => "coffee_shops#update"
 end
