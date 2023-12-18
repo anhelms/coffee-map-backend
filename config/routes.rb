@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   #IMAGES
   get "/images" => "images#index"
   post "/images" => "images#create"
+  get "/images/:id" => "images#show"
 end
