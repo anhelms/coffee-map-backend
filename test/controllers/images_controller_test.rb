@@ -32,4 +32,11 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal "Updated image_url", data["image_url"]
   end
+
+  test "destroy" do
+    assert_difference "Image.count", -1 do
+      delete "/images/#{Image.first.id}.json"
+      assert_response 200
+    end
+  end
 end

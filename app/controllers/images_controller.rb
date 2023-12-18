@@ -25,4 +25,10 @@ class ImagesController < ApplicationController
         )
         render :show
     end
+
+    def destroy
+        @image = Image.find_by(id: params[:id])
+        @image.destroy
+        render json: { message: "Image destroyed successfully" }
+      end
 end
