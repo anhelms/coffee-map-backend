@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   #REVIEWS
   get "/reviews" => "reviews#index"
   post "/reviews" => "reviews#create"
+  get "/reviews/:id" => "reviews#show"
 end

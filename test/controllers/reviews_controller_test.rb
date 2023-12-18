@@ -15,4 +15,12 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
       assert_response 200
     end
   end
+
+  test "show" do
+    get "/reviews/#{Review.first.id}.json"
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal ["id", "coffee_shops_id", "trip_id", "description", "rating", "user_id", "created_at", "updated_at"], data.keys
+  end
 end
