@@ -27,4 +27,10 @@ class CoffeeShopsController < ApplicationController
         )
         render :show
     end
+
+    def destroy
+        @coffee_shop = CoffeeShop.find_by(id: params[:id])
+        @coffee_shop.destroy
+        render json: { message: "Coffee shop destroyed successfully" }
+    end
 end

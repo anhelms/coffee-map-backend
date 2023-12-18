@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post "/coffee_shops" => "coffee_shops#create"
   get "/coffee_shops/:id" => "coffee_shops#show"
   patch "/coffee_shops/:id" => "coffee_shops#update"
+  delete "/coffee_shops/:id" => "coffee_shops#destroy"
 end
