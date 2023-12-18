@@ -12,4 +12,9 @@ class CoffeeShopsController < ApplicationController
         )
         render :show
     end
+
+    def show
+        @coffee_shop = CoffeeShop.find_by(id: params[:id])
+        render :show
+    end
 end
