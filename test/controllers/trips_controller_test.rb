@@ -11,7 +11,7 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Trip.count", 1 do
-      post "/trips.json", params: { user_id: 1, coffee_shops_id: 1 }
+      post "/trips.json", params: { user_id: User.first.id, coffee_shops_id: CoffeeShop.first.id }
       assert_response 200
     end
   end

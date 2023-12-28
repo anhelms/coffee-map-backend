@@ -2,8 +2,8 @@
 
 one:
   user_id: 1
-  coffee_shops_id: 1
+  coffee_shop: one
 
 two:
   user_id: 1
-  coffee_shops_id: 1
+  coffee_shop: one

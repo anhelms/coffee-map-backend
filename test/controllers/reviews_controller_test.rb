@@ -11,7 +11,7 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Review.count", 1 do
-      post "/reviews.json", params: { coffee_shops_id: 1, trip_id: 1, description: "Lovely atmosphere! This is one of my all time favorite places to grab a coffee and knock out a study session.", rating: 4, user_id: 1 }
+      post "/reviews.json", params: { coffee_shops_id: CoffeeShop.first.id, trip_id: Trip.first.id, description: "Lovely atmosphere! This is one of my all time favorite places to grab a coffee and knock out a study session.", rating: 4, user_id: User.first.id }
       assert_response 200
     end
   end

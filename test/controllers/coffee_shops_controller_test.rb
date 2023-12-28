@@ -10,8 +10,8 @@ class CoffeeShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "create" do
-    assert_difference "CoffeeShop.count", 1 do
-      post "/coffee_shops.json", params: { name: "Coffee Signal", latitude: "34.0750", longitude: "118.3097" }
+    assert_difference ("CoffeeShop.count"), 1 do
+      post "/coffee_shops.json", params: { name: "Coffee Signal", latitude: 34.0750, longitude: -118.3097 }
       assert_response 200
     end
   end

@@ -2,8 +2,8 @@
 
 one:
   image_url: MyString
-  coffee_shops_id: 1
+  coffee_shop: one
 
 two:
   image_url: MyString
-  coffee_shops_id: 1
+  coffee_shop: one
