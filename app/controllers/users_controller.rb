@@ -5,13 +5,18 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(
-            name: params[:name],
-            email: params[:email],
-            password_digest: params[:password_digest],
-            image_url: params[:image_url],
+        @user = User.new(
+          name: params[:name],
+          email: params[:email],
+          password: params[:password],
+          password_confirmation: params[:password_confirmation],
+          image_url: params[:image_url],
         )
-        render :show
+        if @user.save
+          render json: { message: "User created successfully" }, status: :created
+        else
+          render json: { errors: @user.errors.full_messages }, status: :bad_request
+        end
     end
 
     def show
