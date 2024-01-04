@@ -73,3 +73,5 @@ end
 gem "rack-cors"
 
 gem "jwt"
+
+gem 'cloudinary', '~> 1.2', '>= 1.2.2'
