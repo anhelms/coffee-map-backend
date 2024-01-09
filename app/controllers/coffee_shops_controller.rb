@@ -7,6 +7,7 @@ class CoffeeShopsController < ApplicationController
     def create
         @coffee_shop = CoffeeShop.create(
             name: params[:name],
+            image_url: params[:image_url],
             latitude: params[:latitude],
             longitude: params[:longitude],
         )
@@ -44,6 +45,7 @@ class CoffeeShopsController < ApplicationController
         @coffee_shop = CoffeeShop.find_by(id: params[:id])
         @coffee_shop.update(
             name: params[:name] || @coffee_shop.name,
+            image_url: params[:image_url] || @coffee_shop.image_url,
             latitude: params[:latitude] || @coffee_shop.latitude,
             longitude: params[:longitude] || @coffee_shop.longitude,
         )
