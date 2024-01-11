@@ -21,7 +21,7 @@ class CoffeeShopsControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["id", "name", "latitude", "longitude", "created_at", "updated_at"], data.keys
+    assert_equal ["id", "name", "image_url", "latitude", "longitude", "created_at", "updated_at", "reviews"], data.keys
   end
 
   test "update" do
