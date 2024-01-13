@@ -75,3 +75,5 @@ gem "rack-cors"
 gem "jwt"
 
 gem 'cloudinary', '~> 1.2', '>= 1.2.2'
+
+gem 'seed_dump', '~> 3.2', '>= 3.2.4'
