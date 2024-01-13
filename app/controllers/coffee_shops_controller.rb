@@ -4,12 +4,39 @@ class CoffeeShopsController < ApplicationController
         render :index
     end
 
+  before_action :authenticate_user
+
+#   # show all coffee shops based on user coordinates
+#   def index
+#     lat = current_user.latitude
+#     lon = current_user.longitude
+#     response = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=coffee+shop&location=#{lat},#{lon}&radius=10000&region=us&type=cafe&key=#{Rails.application.credentials.google_api[:api_key]}")
+#     data = response.parse(:json)
+#     data = data["results"]
+#     chains = ["Starbucks", "Dunkin'", "Foxtail", "Dutch Bros Coffee", "Foxtail Coffee Bar"]
+#     data = data.delete_if { |x| chains.include? x["name"] }
+#     @coffee_shops = data
+#     render json: @coffee_shops
+#   end
+
+#   # show a specific coffee shop
+#   def show
+#     id = params[:id]
+#     response = HTTP.get("https://maps.googleapis.com/maps/api/place/details/json?&place_id=#{id}&fields=name,formatted_address,opening_hours,formatted_phone_number,rating,website,photos,reviews&key=#{Rails.application.credentials.google_api[:api_key]}")
+#     @coffee_shop = response.parse(:json)
+#     render json: @coffee_shop
+#   end
+
     def create
+        results = Geocoder.search(params[:address])
+        location = results.first.coordinates
+        # => [48.856614, 2.3522219]  # latitude and longitude
+
         @coffee_shop = CoffeeShop.create(
             name: params[:name],
             image_url: params[:image_url],
-            latitude: params[:latitude],
-            longitude: params[:longitude],
+            latitude: location[0],
+            longitude: location[1],
         )
 
         if @coffee_shop.valid?
