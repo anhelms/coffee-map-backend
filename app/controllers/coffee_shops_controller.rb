@@ -4,7 +4,7 @@ class CoffeeShopsController < ApplicationController
         render :index
     end
 
-  before_action :authenticate_user
+    before_action :authenticate_user
 
 #   # show all coffee shops based on user coordinates
 #   def index
@@ -30,7 +30,6 @@ class CoffeeShopsController < ApplicationController
     def create
         results = Geocoder.search(params[:address])
         location = results.first.coordinates
-        # => [48.856614, 2.3522219]  # latitude and longitude
 
         @coffee_shop = CoffeeShop.create(
             name: params[:name],
@@ -41,15 +40,11 @@ class CoffeeShopsController < ApplicationController
 
         if @coffee_shop.valid?
             if(params["image_url"])
-                #user sends me image_url
                 image_url = params["image_url"]
             elsif(params["image_file"])
-                #user sends me image file
-                #catch file upload and send to cloudinary
                 response = Cloudinary::Uploader.upload(params["image_file"], resource_type: :auto)
                 image_url = response["secure_url"]
             else
-                #user doesn't send me images
                 image_url = nil
             end
     
