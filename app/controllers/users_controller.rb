@@ -39,4 +39,19 @@ class UsersController < ApplicationController
         @user.destroy
         render json: { message: "User destroyed successfully"}
     end
+
+    def create_demo_account
+        @user = User.new(username: 'demo_user', password: 'demopassword', is_demo: true)
+
+        if @user.save
+            render json { token: generate_token(@user) }, status: :created
+        else
+            render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
+    private
+
+    def generate_token(user)
+    end
 end
