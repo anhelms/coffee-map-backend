@@ -6,11 +6,10 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.create(
-            coffee_shops_id: params[:coffee_shops_id],
-            trip_id: params[:trip_id],
+            coffee_shops_id: params[:id],
             description: params[:description],
             rating: params[:rating],
-            user_id: params[:user_id],
+            user_id: current_user.id,
         )
         render :show
     end
